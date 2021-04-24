@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.main {
+    width: 420px;
+    min-height: 100px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0.1px 2px 8px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content:first-child label {
+    border-radius: 10px 10px 0 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*label part*/
+.content label {
+    position: relative;
+    display: block;
+    color: #fff;
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #FF5722;
+    padding: 0 10px;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.content:first-child label span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    height: 20px;
+    padding: 13px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content label i {
+    margin: 0 20px;
+}
+
+.content:not(:last-child) label {
+    border-bottom: 1px solid #FFAB91;
+}
+
+/*more detail part*/
+.more_detail {
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.more_detail p {
+    color: #ECF0F1;
+    margin: 8px 0;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-left: 7px solid transparent;
+    transition: 0.5s;
+}
+
+.more_detail p:hover {
+    border-left: 7px solid #FF5722;
+}
+
+.more_detail p:first-child {
+    margin-top: 10px;
+}
+
+.more_detail p:last-child {
+    margin-bottom: 10px;
+}
+
+.content:not(:first-child) label span {
+    position: absolute;
+    right: 0;
+}
+
+/* input box part*/
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~label .bx-chevron-down {
+    transform: rotate(180deg);
+}
+
+input[type="checkbox"]:checked~.more_detail {
+    max-height: 100vh;
+}
+
+input[type="checkbox"]:checked~label {
+    border-bottom: none;
+}
